@@ -147,6 +147,15 @@ img{max-width:100%;display:block}
 
 .online-ticket-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}.online-ticket-head h3{margin:0}.livepocket-button{display:inline-flex;align-items:center;justify-content:center;gap:.35em;padding:10px 18px;border:1px solid var(--cyan);color:var(--cyan);text-decoration:none;font-weight:900;background:rgba(139,220,255,.06);white-space:nowrap}.livepocket-button:hover{border-color:var(--yellow);color:var(--yellow);box-shadow:0 0 16px rgba(255,232,31,.22)}.ticket-sale-list{display:grid;gap:12px}.ticket-sale-row{border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.18);padding:14px 16px}.ticket-sale-row-title{color:var(--yellow);font-weight:900;margin-bottom:4px}.benefit-note{color:#fff;font-weight:400;font-size:.92rem;margin-bottom:4px}.ticket-sale-row .sold{margin-top:0}.ticket-sale-summary-note{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(255,255,255,.18);font-size:.86rem;color:var(--muted);line-height:1.65}.notice .notice-warning{color:var(--yellow);font-weight:900;margin-bottom:10px}.notice .notice-text{color:#fff}
 
+
+/* MISSION LOG */
+.mission-log-list{max-width:900px;margin:0 auto;border-top:1px solid rgba(255,232,31,.32);border-bottom:1px solid rgba(255,232,31,.32);background:linear-gradient(180deg,rgba(23,27,34,.78),rgba(15,18,24,.86));box-shadow:var(--shadow)}
+.mission-log-item{display:grid;grid-template-columns:auto 130px minmax(0,1fr);align-items:center;gap:18px;padding:22px 26px;border-bottom:1px dashed rgba(255,255,255,.16)}
+.mission-log-item:last-child{border-bottom:0}
+.mission-log-signal{font-size:1.15rem;white-space:nowrap;line-height:1}
+.mission-log-date{color:var(--yellow);font-weight:900;letter-spacing:.05em;white-space:nowrap}
+.mission-log-text{color:#fff;font-weight:300;line-height:1.6}
+@media(max-width:640px){.mission-log-item{grid-template-columns:auto 1fr;gap:8px 12px;padding:18px 16px}.mission-log-signal{grid-row:1/3;align-self:center}.mission-log-date{grid-column:2}.mission-log-text{grid-column:2;font-size:.95rem}}
 @media(max-width:960px){.about-grid,.info-grid{grid-template-columns:1fr}.stage-grid{grid-template-columns:1fr}.tickets{grid-template-columns:repeat(2,minmax(220px,1fr))}.tiles{grid-template-columns:repeat(2,1fr)}.photo-card{flex-basis:calc((100% - 10px)/2)}.hero-logo img{width:min(760px,94vw)}}
 @media(max-width:640px){.header{padding:10px 14px;align-items:center}.logo-small{width:86px}.menu-toggle{display:flex;position:relative;z-index:31}.nav{position:fixed;top:61px;left:0;right:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:rgba(0,0,0,.96);border-bottom:1px solid rgba(255,232,31,.25);transform:translateY(-140%);opacity:0;visibility:hidden;pointer-events:none;transition:.25s;z-index:30;box-shadow:0 18px 34px rgba(0,0,0,.55)}.nav.is-open,body.nav-open .nav{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto}.nav a{font-size:.82rem;text-align:center;padding:13px 8px;border-top:1px solid rgba(255,232,31,.1)}.nav a:hover::after,.nav a.is-active::after{display:none}.nav .x-nav-link{width:auto;height:auto;border:0;border-radius:0;display:block;font-size:.82rem;color:var(--yellow)}.nav .x-nav-link span[aria-hidden="true"]{display:none}.nav .x-nav-link .x-nav-text{display:inline}.online-ticket{text-align:center;padding:16px 14px}.online-ticket a{overflow-wrap:anywhere}.ticket-sale-grid{grid-template-columns:1fr}.ticket-sale-box{padding:14px 12px}.online-ticket-head{display:grid;grid-template-columns:1fr;gap:10px}.livepocket-button{width:100%}.ticket-sale-row{text-align:left}.section{padding:64px 16px}.hero{min-height:86svh;padding:96px 18px 44px}.hero-logo img{width:min(560px,96vw)}.hero-date{margin-top:18px;font-size:clamp(2rem,12vw,3.8rem)}.hero-copy{font-size:.82rem;letter-spacing:.05em}.scroll{margin-top:26px}.hero-arrows{display:none}.dots{margin-top:12px}.countdown{grid-template-columns:repeat(2,1fr)}.count-item{padding:20px 10px}.count-item:nth-child(2){border-right:0}.info-grid{display:block}.info-card{padding:18px;margin-bottom:16px}.info-row{grid-template-columns:1fr;gap:4px;padding:15px 0}.info-row .icon{font-size:1.2rem}.info-row p,.info-row a{overflow-wrap:anywhere;word-break:break-word}.small{overflow-wrap:anywhere;word-break:break-word}.tickets{grid-template-columns:1fr}.ticket{min-height:auto;padding:20px}.tiles{grid-template-columns:repeat(2,1fr);gap:12px}.tile{padding:14px}.tile h3{font-size:.86rem}.placeholder,.placeholder img{min-height:120px}.faq,.tile#contact{grid-column:1/-1}.schedule-row{grid-template-columns:76px minmax(0,1fr);gap:12px}.section-title::before,.section-title::after{display:none}.crawl-wrap{height:330px}.gallery-track{align-items:stretch}.photo-card{flex-basis:100%;aspect-ratio:4/3;min-height:0;background:#05070a}.photo-card img{width:100%;height:100%;object-fit:cover;object-position:center}.photo-card .photo-fallback{min-height:220px}.cosplay-card{grid-template-columns:1fr;text-align:left;padding:22px}.cosplay-icon{display:none}.sold-inline{margin:.35em 0 0;display:inline-block}}
 .planet,.ship,.episode-title{display:none!important}
@@ -178,6 +187,19 @@ img{max-width:100%;display:block}
 </section>
 <section aria-label="イベント紹介" class="crawl-wrap">
 <div class="crawl-text">TRANSMISSION RECEIVED<br/><br/>銀河各地のファンへ。<br/><br/>展示。<br/>物販。<br/>コスプレ。<br/><br/>あらゆる情熱が集う<br/>ファンイベント。<br/><br/>UNLEASHED EPISODE 4<br/>開催決定。</div>
+</section>
+
+<section class="section bg-space-2" id="mission-log">
+<div class="wrap">
+<h2 class="section-title">MISSION LOG</h2>
+<div class="mission-log-list" aria-label="更新履歴">
+<div class="mission-log-item">
+<span class="mission-log-signal" aria-hidden="true">🟡📡</span>
+<time class="mission-log-date" datetime="2026-07-17">2026.07.17</time>
+<p class="mission-log-text">アンリーシュドWEBサイト公開</p>
+</div>
+</div>
+</div>
 </section>
 <section class="section bg-space-1" id="about">
 <div class="wrap">
