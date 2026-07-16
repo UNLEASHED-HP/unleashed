@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="UNLEASHED EPISODE 4 - 銀河系ファンイベント" name="description"/>
+<title>UNLEASHED EPISODE 4</title>
+<!-- =====================================================
+
+UNLEASHED EPISODE 4 / 更新用メモ
+
+【画像差し替え】
+・ヘッダーロゴ：header-logo-unleashed.png
+・TOPメインロゴ：logo-unleashed.png
+・TOP背景：hero-01.jpg / hero-02.jpg / hero-03.jpg
+・ページ背景：back1.png / back2.png
+・イベント写真：photo-01.jpg 〜 photo-10.jpg
+  ※無い画像は自動で非表示になります。
+・サークルリスト：circle-list.jpg
+・会場マップ：venue-map.jpg
+
+【主に更新する場所】
+・EVENT INFORMATION：開催日、会場、開催時間、チケット情報
+・COSPLAY INFORMATION：更衣室、クローク情報
+・STAGE EVENT：ステージイベント内容
+・MISSION SCHEDULE：当日の時間表
+・FAQ / CONTACT：質問、問い合わせ先
+
+【チケットURL】
+LivePocket： https://livepocket.jp/e/3m41v
+
+===================================================== -->
+<style>
+:root{
+  --bg:#030507;
+  --panel:#101318;
+  --panel2:#171b22;
+  --yellow:#ffe81f;
+  --blue:#35a7ff;
+  --cyan:#8bdcff;
+  --red:#ff4747;
+  --text:#ffffff;
+  --muted:#b9c0ca;
+  --line:rgba(255,232,31,.42);
+  --shadow:0 0 28px rgba(255,232,31,.18),0 0 60px rgba(53,167,255,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  overflow-x:hidden;
+  line-height:1.75;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(53,167,255,.18),transparent 22%),
+    radial-gradient(circle at 78% 12%,rgba(255,232,31,.09),transparent 24%),
+    radial-gradient(circle,#fff 1px,transparent 1.5px);
+  background-size:auto,auto,4px 4px;
+  opacity:.72;
+  z-index:-3;
+}
+a{color:var(--cyan)}
+img{max-width:100%;display:block}
+.section{padding:92px 24px;position:relative;overflow:hidden}
+.section.dark{background:linear-gradient(180deg,#090b0f,#151922)}
+/* 背景素材：index.html と同じフォルダに back1.png / back2.png を置くと、各セクションで交互に表示されます */
+.section.bg-space-1,.section.bg-space-2{background-color:#05070c;background-size:cover;background-position:center;background-repeat:no-repeat}
+.section.bg-space-1{background-image:linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.5)),url('back1.png')}
+.section.bg-space-2{background-image:linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.5)),url('back2.png')}
+.section.bg-space-1::before,.section.bg-space-2::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.12);pointer-events:none;z-index:0}
+.section.bg-space-1 > .wrap,.section.bg-space-2 > .wrap{position:relative;z-index:1}
+.wrap{width:min(1180px,100%);margin:auto}
+.section-title{
+  display:flex;align-items:center;gap:18px;justify-content:center;
+  color:var(--yellow);font-weight:900;letter-spacing:.08em;
+  font-size:clamp(1.45rem,3vw,2.4rem);margin-bottom:36px;text-align:center;
+  text-shadow:0 0 18px rgba(255,232,31,.35);
+}
+.section-title::before,.section-title::after{content:"";height:1px;background:var(--line);flex:1;max-width:260px}
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px clamp(16px,4vw,56px);
+  background:rgba(0,0,0,.72);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,232,31,.18);
+}
+.logo-small{display:block;width:clamp(82px,9vw,125px);height:auto}.logo-small img{width:100%;height:auto;display:block}.logo-small .logo-fallback{font-size:clamp(1.05rem,2.1vw,1.55rem);line-height:.9;font-weight:1000;color:var(--blue);letter-spacing:-.06em;font-style:italic;text-shadow:0 0 22px rgba(53,167,255,.5)}
+.nav{display:flex;gap:clamp(10px,2vw,26px);flex-wrap:wrap;justify-content:flex-end}
+.nav a{color:var(--yellow);text-decoration:none;font-size:.86rem;font-weight:800;letter-spacing:.08em;position:relative}
+.nav a:hover::after,.nav a.is-active::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--yellow);box-shadow:0 0 12px var(--yellow)}.nav .x-nav-link{width:32px;height:32px;border:1px solid rgba(255,232,31,.55);border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.18rem;line-height:1;flex:0 0 auto}.nav .x-nav-link:hover{border-color:var(--yellow);box-shadow:0 0 14px rgba(255,232,31,.3)}.nav .x-nav-link:hover::after{display:none}.x-nav-text{display:none}
+.hero{
+  min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;text-align:center;padding:110px 20px 70px;
+  background:#02040a;
+}
+/* TOP背景スライダー画像：index.html と同じフォルダに hero-01.jpg / hero-02.jpg / hero-03.jpg を入れてください。推奨サイズは 1920×1080px 以上、横長16:9。背景写真の上に惑星や宇宙船の装飾は重ねていません。 */
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg-track{height:100%;display:flex;transition:transform .65s ease}
+.hero-slide{min-width:100%;height:100%;position:relative;background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.08) 60%,rgba(0,0,0,.62));z-index:1}
+.hero-slide.slide-01,.hero-slide.slide-02,.hero-slide.slide-03{background-image:none}
+.planet{position:absolute;left:-16vw;bottom:-26vw;width:58vw;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 68% 30%,#8bdcff 0 2%,#1c4d77 13%,#0b1d32 45%,#02060a 72%);box-shadow:0 0 60px rgba(139,220,255,.45),inset -50px -20px 90px rgba(0,0,0,.8);opacity:.75;z-index:1}
+.ship{position:absolute;filter:drop-shadow(0 0 14px rgba(255,255,255,.18));opacity:.82;z-index:1}
+.ship::before{content:"";display:block;background:linear-gradient(90deg,#222,#888,#1c1c1c);clip-path:polygon(0 48%,72% 38%,100% 50%,72% 62%);height:18px;width:130px}
+.ship.s1{left:8%;top:35%;transform:rotate(-11deg) scale(1.3)}
+.ship.s1::after{content:"";position:absolute;left:-42px;top:7px;width:55px;height:3px;background:linear-gradient(90deg,transparent,var(--red));box-shadow:0 0 14px var(--red)}
+.ship.s2{right:8%;top:20%;transform:rotate(12deg) scale(1.8);opacity:.55}
+.ship.s3{right:22%;bottom:28%;transform:rotate(-6deg) scale(.75)}
+.hero-inner{position:relative;z-index:2;width:min(950px,100%)}
+.hero-logo{display:grid;place-items:center}.hero-logo img{width:min(860px,92vw);height:auto}.hero h1{font-size:clamp(4rem,13vw,10rem);line-height:.76;font-weight:1000;font-style:italic;color:var(--blue);letter-spacing:-.08em;text-shadow:0 3px 0 #0b4d82,0 0 28px rgba(53,167,255,.75),0 0 70px rgba(53,167,255,.25)}
+.hero h1 span{display:block;color:#fff;font-size:clamp(1.8rem,5vw,4.5rem);letter-spacing:.08em;font-style:normal;text-shadow:0 0 22px rgba(255,255,255,.3)}.episode-title{margin-top:8px;color:#fff;font-size:clamp(1.8rem,5vw,4.5rem);letter-spacing:.08em;font-weight:1000;text-shadow:0 0 22px rgba(255,255,255,.3)}
+.hero-date{margin-top:26px;color:var(--yellow);font-size:clamp(2rem,6vw,5rem);font-weight:1000;line-height:1;text-shadow:0 0 24px rgba(255,232,31,.42)}
+.hero-date small{font-size:.32em;margin-left:10px;color:#fff;letter-spacing:.08em}
+.hero-copy{margin-top:18px;letter-spacing:.12em;color:#f2f2f2;font-weight:700}
+.hero-arrows{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 26px;z-index:3;pointer-events:none}.hero-arrow{pointer-events:auto;border:0;background:rgba(0,0,0,.18);color:#fff;font-size:4rem;line-height:1;width:64px;height:90px;cursor:pointer;opacity:.72;transition:.25s}.hero-arrow:hover{opacity:1;color:var(--yellow);text-shadow:0 0 16px var(--yellow)}
+.scroll{margin-top:42px;color:var(--yellow);font-weight:900;animation:pulse 1.45s infinite}.dots{display:flex;justify-content:center;gap:8px;margin-top:16px}.dot{width:9px;height:9px;border-radius:50%;border:0;background:#6c7078;cursor:pointer;display:inline-block;padding:0;transition:.25s}.dot.is-active{background:var(--yellow);box-shadow:0 0 12px var(--yellow);transform:scale(1.25)}
+@keyframes pulse{50%{opacity:.32;transform:translateY(4px)}}
+.crawl-wrap{height:430px;overflow:hidden;perspective:460px;background:linear-gradient(180deg,#000,#05070a);display:grid;place-items:center}
+.crawl-text{color:var(--yellow);font-size:clamp(1.25rem,2.8vw,2.05rem);line-height:1.95;text-align:center;font-weight:800;letter-spacing:.05em;text-shadow:0 0 18px rgba(255,232,31,.25);transform-origin:bottom;animation:crawl 32s linear infinite}
+@keyframes crawl{0%{transform:rotateX(25deg) translateY(420px)}100%{transform:rotateX(25deg) translateY(-980px)}}
+.about-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:34px;align-items:center}
+.gallery{position:relative;overflow:hidden;border:1px solid rgba(255,232,31,.2);background:#07090d;box-shadow:var(--shadow)}
+.gallery-track{display:flex;gap:10px;padding:12px;transition:transform .45s ease}.photo-card{flex:0 0 calc((100% - 20px)/3)}
+.gallery-arrows{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;pointer-events:none;z-index:3;padding:0 6px}.gallery-arrow{pointer-events:auto;border:1px solid rgba(255,232,31,.35);background:rgba(0,0,0,.58);color:var(--yellow);width:42px;height:58px;font-size:2.1rem;line-height:1;cursor:pointer;transition:.25s}.gallery-arrow:hover{background:rgba(255,232,31,.12);box-shadow:0 0 14px rgba(255,232,31,.35)}
+.photo-card{aspect-ratio:16/9;height:auto;background:linear-gradient(135deg,#29303d,#11151d);border:1px solid rgba(255,255,255,.14);display:grid;place-items:center;text-align:center;color:#c8d0dd;font-size:.9rem;padding:0;cursor:pointer;transition:.25s;overflow:hidden;position:relative}.photo-card img{width:100%;height:100%;object-fit:cover;object-position:center}.photo-card .photo-fallback{position:absolute;inset:0;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#29303d,#11151d)}.photo-card.has-image .photo-fallback{display:none}
+.photo-card:hover,.placeholder:hover{border-color:var(--yellow);color:var(--yellow);transform:translateY(-2px)}
+.about-text{font-size:1.05rem}.about-text strong{display:block;color:var(--yellow);font-size:1.8rem;margin:4px 0 12px}.way{color:var(--yellow);font-weight:900;margin-top:16px;font-size:1.25rem}.past-missions{margin-top:18px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.18);font-size:.9rem}.past-missions-title{color:var(--muted);font-weight:900;letter-spacing:.08em;margin-bottom:6px}.past-missions a{display:inline-block;margin:4px 8px 4px 0;padding:3px 9px;border:1px solid rgba(139,220,255,.3);border-radius:999px;background:rgba(139,220,255,.06);text-decoration:none;font-weight:800}.past-missions a:hover{border-color:var(--yellow);color:var(--yellow)}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:900px;margin:auto}.count-item{text-align:center;padding:26px 14px;border-right:1px solid rgba(255,232,31,.24)}.count-item:last-child{border-right:0}.num{display:block;color:var(--yellow);font-size:clamp(2.4rem,8vw,5.4rem);font-weight:1000;line-height:1;text-shadow:0 0 24px rgba(255,232,31,.32)}.label{font-size:.9rem;letter-spacing:.18em;color:#eaeaea}.countdown-message{display:block;max-width:900px;margin:auto;padding:34px 18px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(23,27,34,.72),rgba(15,18,24,.78));box-shadow:var(--shadow)}.countdown-message .mission{display:block;color:var(--yellow);font-size:clamp(1.6rem,5vw,3.6rem);font-weight:1000;letter-spacing:.08em;line-height:1.15;text-shadow:0 0 24px rgba(255,232,31,.36)}.countdown-message .jp{display:block;margin-top:12px;color:#fff;font-size:clamp(1.15rem,3vw,2rem);font-weight:900}.countdown-message.complete .mission{color:#8bdcff;text-shadow:0 0 24px rgba(139,220,255,.35)}.label{font-size:.9rem;letter-spacing:.18em;color:#eaeaea}
+.info-grid{display:grid;grid-template-columns:.9fr 1.35fr;gap:28px}.info-card,.ticket,.online-ticket,.notice,.schedule,.tile,.faq details{background:linear-gradient(180deg,#171b22,#0f1218);border:1px solid rgba(255,232,31,.22);box-shadow:0 10px 34px rgba(0,0,0,.25)}.info-card{padding:26px}.info-row{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 0;border-bottom:1px dashed rgba(255,255,255,.16)}.info-row:last-child{border-bottom:0}.icon{color:var(--yellow);font-size:1.5rem}.info-label{color:var(--yellow);font-weight:800;font-size:.92rem}.online-ticket{padding:18px 20px;margin-bottom:18px;display:block}.online-ticket h3{color:var(--yellow);font-size:1.05rem}.ticket-sale-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:18px;margin-top:14px;align-items:stretch}.ticket-sale-box{border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.18);padding:18px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:150px}.ticket-sale-label{display:inline-block;padding:4px 12px;border:1px solid var(--yellow);color:var(--yellow);font-weight:900;font-size:.86rem}.ticket-sale-box .sold{margin-top:0;font-size:1.05rem}.ticket-sale-box .sale-date{color:#fff;font-weight:900;margin-top:2px}.ticket-sale-box .sale-link{display:inline-block;margin:4px 0;padding:10px 18px;border:1px solid var(--cyan);color:var(--cyan);text-decoration:none;font-weight:900}.ticket-sale-box .sale-link:hover{border-color:var(--yellow);color:var(--yellow);box-shadow:0 0 16px rgba(255,232,31,.22)}.ticket-sale-note{font-size:.82rem;color:var(--muted);line-height:1.55}.onsite-ticket-title{color:var(--yellow);font-size:1.25rem;font-weight:900;letter-spacing:.08em;text-align:center;margin:8px 0 14px;text-shadow:0 0 12px rgba(255,232,31,.25)}.tickets{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:12px}.ticket{padding:18px;text-align:center;min-height:205px;word-break:keep-all;overflow-wrap:normal}.ticket h3{color:var(--yellow);font-size:1.25rem;white-space:nowrap}.price{font-size:2rem;font-weight:1000;margin:8px 0}.time{font-weight:900}.ticket hr{border:0;border-top:1px dashed rgba(255,255,255,.2);margin:12px 0}.ticket-type{display:inline-block;margin-top:2px;padding:4px 10px;border:1px solid var(--yellow);color:var(--yellow);font-weight:900;font-size:.82rem}.sold{display:inline-block;margin-top:8px;padding:4px 8px;border:1px solid var(--red);color:var(--red);font-weight:900}.small{font-size:.78rem;color:var(--muted)}.red{color:var(--red)}.notice{margin-top:14px;padding:16px;text-align:center}.notice b{color:var(--yellow)}
+.schedule{padding:24px;max-width:820px;margin:auto}.schedule-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;align-items:center;padding:13px 0;border-bottom:1px dashed rgba(255,255,255,.18)}.schedule-row:last-child{border-bottom:0}.schedule-time{color:var(--yellow);font-weight:900;white-space:nowrap}.schedule-row>div:last-child{color:#fff;font-weight:300;min-width:0}.schedule-important{color:var(--yellow);font-weight:300}.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.tile{padding:18px}.tile h3{color:var(--yellow);font-size:1rem;margin-bottom:12px}.placeholder{min-height:150px;border:2px dashed rgba(255,255,255,.28);display:grid;place-items:center;text-align:center;color:#aeb6c5;padding:0;cursor:pointer;transition:.25s;position:relative;overflow:hidden;background:linear-gradient(135deg,#29303d,#11151d)}.placeholder img{width:100%;height:100%;min-height:150px;object-fit:cover}.placeholder-fallback{position:absolute;inset:0;display:grid;place-items:center;padding:16px;text-align:center;background:linear-gradient(135deg,#29303d,#11151d)}.placeholder.has-image{border-style:solid}.placeholder.has-image .placeholder-fallback{display:none}.faq details{padding:15px;margin-bottom:10px}.faq summary{color:var(--yellow);font-weight:900;cursor:pointer}.contact-card{padding:22px;text-align:center}#contact{width:min(920px,100%);margin:auto}.footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(255,232,31,.18);color:#dce3ee;background:#06070a}.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px}.modal.is-open{display:flex}.modal-inner{max-width:min(1100px,96vw);max-height:90vh;background:#0f1218;border:1px solid var(--line);padding:18px}.modal-close{position:absolute;right:24px;top:16px;background:none;border:0;color:white;font-size:2rem;cursor:pointer}.modal img{max-height:78vh;margin:auto}.modal-note{color:var(--muted);text-align:center;margin-top:12px}
+
+
+.x-card{min-height:150px;border:1px solid rgba(53,167,255,.38);background:linear-gradient(180deg,rgba(14,20,30,.92),rgba(8,10,16,.92));padding:18px;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:center}.x-card .hashtag{color:var(--yellow);font-weight:1000;font-size:1.05rem;letter-spacing:.04em}.x-card .x-note{color:var(--muted);font-size:.82rem;line-height:1.55}.x-button{display:inline-block;margin-top:4px;padding:10px 14px;border:1px solid var(--yellow);color:var(--yellow);text-decoration:none;font-weight:900;transition:.25s}.x-button:hover{background:rgba(255,232,31,.12);box-shadow:0 0 16px rgba(255,232,31,.22)}
+.info-links .tiles{grid-template-columns:repeat(2,1fr)}.movie-placeholder{display:none}
+
+.cosplay-card{max-width:860px;margin:auto;padding:26px;background:linear-gradient(180deg,#171b22,#0f1218);border:1px solid rgba(255,232,31,.22);box-shadow:0 10px 34px rgba(0,0,0,.25);display:grid;grid-template-columns:54px 1fr;gap:18px;align-items:flex-start}.cosplay-icon{color:var(--yellow);font-size:1.5rem;line-height:1.7}.cosplay-card h3{color:var(--yellow);font-size:1.25rem;margin-bottom:8px}.sold-inline{display:inline-block;margin-left:.5em;padding:2px 8px;border:1px solid var(--red);color:var(--red);font-size:.85em;font-weight:900;white-space:nowrap}
+.guide-accordion{max-width:920px;margin:auto}.guide-accordion details{background:linear-gradient(180deg,#171b22,#0f1218);border:1px solid rgba(255,232,31,.22);box-shadow:0 10px 34px rgba(0,0,0,.25);margin-bottom:12px}.guide-accordion summary{padding:18px 20px;color:var(--yellow);font-weight:900;font-size:1.05rem;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}.guide-accordion summary::-webkit-details-marker{display:none}.guide-accordion summary::after{content:'＋';font-size:1.25rem}.guide-accordion details[open] summary::after{content:'−'}.guide-body{padding:0 22px 22px}.guide-body ul{margin:0;padding-left:1.3em}.guide-body li{margin:.75em 0;line-height:1.75}.guide-body p{line-height:1.75}.guide-note{max-width:920px;margin:18px auto 0;text-align:center;font-size:.9rem;color:var(--muted)}.guide-note a{color:var(--yellow);font-weight:900}.guide-note a:hover{color:var(--cyan)}
+.stage-accordion{max-width:900px;margin:auto}.stage-accordion details{background:linear-gradient(180deg,rgba(23,27,34,.94),rgba(15,18,24,.94));border:1px solid rgba(255,232,31,.28);box-shadow:0 10px 34px rgba(0,0,0,.28);margin-bottom:12px}.stage-accordion summary{position:relative;display:grid;grid-template-columns:110px 1px minmax(0,1fr);align-items:center;gap:22px;padding:20px 58px 20px 22px;cursor:pointer;list-style:none}.stage-accordion summary::-webkit-details-marker{display:none}.stage-time{color:var(--yellow);font-size:1rem;font-weight:900;letter-spacing:.04em;white-space:nowrap}.stage-divider{width:1px;height:42px;background:rgba(255,255,255,.55)}.stage-title{color:#fff;font-size:1.12rem;font-weight:300;line-height:1.5}.stage-accordion summary::after{content:"＋";position:absolute;right:22px;top:50%;transform:translateY(-50%);color:var(--yellow);font-size:1.6rem;font-weight:400}.stage-accordion details[open] summary::after{content:"−"}.stage-accordion details[open] summary{border-bottom:1px solid rgba(255,232,31,.18)}.stage-detail-body{padding:20px 22px 24px}.stage-detail-body p{color:#eef3fa}@media(max-width:600px){.stage-accordion summary{grid-template-columns:82px 1px minmax(0,1fr);gap:14px;padding:18px 48px 18px 16px}.stage-time{font-size:.9rem}.stage-divider{height:38px}.stage-title{font-size:1rem}.stage-accordion summary::after{right:15px;font-size:1.45rem}}.stage-thumb{width:112px;aspect-ratio:1/1;margin:16px auto 0;padding:0;border:1px solid rgba(255,232,31,.4);background:#080a0e;cursor:pointer;overflow:hidden;display:block;transition:.25s}.stage-thumb img{width:100%;height:100%;object-fit:cover;display:block}.stage-thumb:hover,.stage-thumb:focus-visible{border-color:var(--yellow);box-shadow:0 0 18px rgba(255,232,31,.3);transform:translateY(-2px)}.stage-thumb-note{display:block;margin-top:7px;color:var(--muted);font-size:.75rem;text-align:center}.menu-toggle{display:none;background:rgba(255,232,31,.08);border:1px solid rgba(255,232,31,.32);width:44px;height:40px;border-radius:6px;align-items:center;justify-content:center;gap:5px;flex-direction:column;cursor:pointer}.menu-toggle span{display:block;width:22px;height:2px;background:var(--yellow);transition:.25s}.menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu-toggle.is-open span:nth-child(2){opacity:0}.menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.online-ticket-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}.online-ticket-head h3{margin:0}.livepocket-button{display:inline-flex;align-items:center;justify-content:center;gap:.35em;padding:10px 18px;border:1px solid var(--cyan);color:var(--cyan);text-decoration:none;font-weight:900;background:rgba(139,220,255,.06);white-space:nowrap}.livepocket-button:hover{border-color:var(--yellow);color:var(--yellow);box-shadow:0 0 16px rgba(255,232,31,.22)}.ticket-sale-list{display:grid;gap:12px}.ticket-sale-row{border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.18);padding:14px 16px}.ticket-sale-row-title{color:var(--yellow);font-weight:900;margin-bottom:4px}.benefit-note{color:#fff;font-weight:400;font-size:.92rem;margin-bottom:4px}.ticket-sale-row .sold{margin-top:0}.ticket-sale-summary-note{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(255,255,255,.18);font-size:.86rem;color:var(--muted);line-height:1.65}.notice .notice-warning{color:var(--yellow);font-weight:900;margin-bottom:10px}.notice .notice-text{color:#fff}
+
+@media(max-width:960px){.about-grid,.info-grid{grid-template-columns:1fr}.stage-grid{grid-template-columns:1fr}.tickets{grid-template-columns:repeat(2,minmax(220px,1fr))}.tiles{grid-template-columns:repeat(2,1fr)}.photo-card{flex-basis:calc((100% - 10px)/2)}.hero-logo img{width:min(760px,94vw)}}
+@media(max-width:640px){.header{padding:10px 14px;align-items:center}.logo-small{width:86px}.menu-toggle{display:flex;position:relative;z-index:31}.nav{position:fixed;top:61px;left:0;right:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:rgba(0,0,0,.96);border-bottom:1px solid rgba(255,232,31,.25);transform:translateY(-140%);opacity:0;visibility:hidden;pointer-events:none;transition:.25s;z-index:30;box-shadow:0 18px 34px rgba(0,0,0,.55)}.nav.is-open,body.nav-open .nav{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto}.nav a{font-size:.82rem;text-align:center;padding:13px 8px;border-top:1px solid rgba(255,232,31,.1)}.nav a:hover::after,.nav a.is-active::after{display:none}.nav .x-nav-link{width:auto;height:auto;border:0;border-radius:0;display:block;font-size:.82rem;color:var(--yellow)}.nav .x-nav-link span[aria-hidden="true"]{display:none}.nav .x-nav-link .x-nav-text{display:inline}.online-ticket{text-align:center;padding:16px 14px}.online-ticket a{overflow-wrap:anywhere}.ticket-sale-grid{grid-template-columns:1fr}.ticket-sale-box{padding:14px 12px}.online-ticket-head{display:grid;grid-template-columns:1fr;gap:10px}.livepocket-button{width:100%}.ticket-sale-row{text-align:left}.section{padding:64px 16px}.hero{min-height:86svh;padding:96px 18px 44px}.hero-logo img{width:min(560px,96vw)}.hero-date{margin-top:18px;font-size:clamp(2rem,12vw,3.8rem)}.hero-copy{font-size:.82rem;letter-spacing:.05em}.scroll{margin-top:26px}.hero-arrows{display:none}.dots{margin-top:12px}.countdown{grid-template-columns:repeat(2,1fr)}.count-item{padding:20px 10px}.count-item:nth-child(2){border-right:0}.info-grid{display:block}.info-card{padding:18px;margin-bottom:16px}.info-row{grid-template-columns:1fr;gap:4px;padding:15px 0}.info-row .icon{font-size:1.2rem}.info-row p,.info-row a{overflow-wrap:anywhere;word-break:break-word}.small{overflow-wrap:anywhere;word-break:break-word}.tickets{grid-template-columns:1fr}.ticket{min-height:auto;padding:20px}.tiles{grid-template-columns:repeat(2,1fr);gap:12px}.tile{padding:14px}.tile h3{font-size:.86rem}.placeholder,.placeholder img{min-height:120px}.faq,.tile#contact{grid-column:1/-1}.schedule-row{grid-template-columns:76px minmax(0,1fr);gap:12px}.section-title::before,.section-title::after{display:none}.crawl-wrap{height:330px}.gallery-track{align-items:stretch}.photo-card{flex-basis:100%;aspect-ratio:4/3;min-height:0;background:#05070a}.photo-card img{width:100%;height:100%;object-fit:cover;object-position:center}.photo-card .photo-fallback{min-height:220px}.cosplay-card{grid-template-columns:1fr;text-align:left;padding:22px}.cosplay-icon{display:none}.sold-inline{margin:.35em 0 0;display:inline-block}}
+.planet,.ship,.episode-title{display:none!important}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="header">
+<a aria-label="UNLEASHED TOP" class="logo-small" href="#top"><img alt="UNLEASHED" decoding="async" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" src="header-logo-unleashed.png"/><span class="logo-fallback" style="display:none">UNLEASHED</span></a>
+<button aria-controls="globalNav" aria-expanded="false" aria-label="メニューを開く" class="menu-toggle" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="メインメニュー" class="nav" id="globalNav"><a class="x-nav-link" href="https://x.com/unleashed_s" rel="noopener" target="_blank" aria-label="公式Xを開く"><span aria-hidden="true">𝕏</span><span class="x-nav-text">X</span></a><a href="#top">TOP</a><a href="#info">INFO</a><a href="#schedule">SCHEDULE</a><a href="#circle">CIRCLE MAP</a><a href="#stage">STAGE</a><a href="#guide">RULES</a><a href="#cosplay">COSPLAY</a><a href="#contact">CONTACT</a></nav>
+</header>
+<main id="top">
+<section class="hero">
+<div aria-hidden="true" class="hero-bg">
+<div class="hero-bg-track">
+<div class="hero-slide slide-01"><img alt="" decoding="async" fetchpriority="high" loading="eager" src="hero-01.jpg"/></div>
+<div class="hero-slide slide-02"><img alt="" decoding="async" loading="lazy" src="hero-02.jpg"/></div>
+<div class="hero-slide slide-03"><img alt="" decoding="async" loading="lazy" src="hero-03.jpg"/></div>
+</div>
+</div>
+<div aria-label="TOPスライド操作" class="hero-arrows"><button aria-label="前のTOP画像" class="hero-arrow" data-hero-prev="" type="button">‹</button><button aria-label="次のTOP画像" class="hero-arrow" data-hero-next="" type="button">›</button></div>
+<div class="hero-inner">
+<div class="hero-logo"><img alt="UNLEASHED" decoding="async" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" src="logo-unleashed.png"/><h1 style="display:none">UNLEASHED<span>EPISODE 4</span></h1></div>
+<div class="hero-date">2026.07.25<small>SAT</small></div>
+<p class="hero-copy">A FAN EVENT IN A GALAXY NOT SO FAR AWAY...</p>
+<div class="scroll">▼ SCROLL</div><div aria-label="TOPスライド切り替え" class="dots hero-dots"><button aria-label="TOP 1" class="dot is-active" data-hero-dot="0" type="button"></button><button aria-label="TOP 2" class="dot" data-hero-dot="1" type="button"></button><button aria-label="TOP 3" class="dot" data-hero-dot="2" type="button"></button></div>
+</div>
+</section>
+<section aria-label="イベント紹介" class="crawl-wrap">
+<div class="crawl-text">TRANSMISSION RECEIVED<br/><br/>銀河各地のファンへ。<br/><br/>展示。<br/>物販。<br/>コスプレ。<br/><br/>あらゆる情熱が集う<br/>ファンイベント。<br/><br/>UNLEASHED EPISODE 4<br/>開催決定。</div>
+</section>
+<section class="section bg-space-1" id="about">
+<div class="wrap">
+<h2 class="section-title">WHAT IS UNLEASHED?</h2>
+<div class="about-grid">
+<div class="gallery">
+<!-- 写真ギャラリー：photo-01.jpg 〜 photo-10.jpg まで対応。存在しない画像は自動で非表示になります。 -->
+<div class="gallery-track">
+<div class="photo-card" data-img="photo-01.jpg"><img alt="PHOTO 01" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-01.jpg"/><span class="photo-fallback">PHOTO 01<br/>photo-01.jpg</span></div><div class="photo-card" data-img="photo-02.jpg"><img alt="PHOTO 02" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-02.jpg"/><span class="photo-fallback">PHOTO 02<br/>photo-02.jpg</span></div><div class="photo-card" data-img="photo-03.jpg"><img alt="PHOTO 03" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-03.jpg"/><span class="photo-fallback">PHOTO 03<br/>photo-03.jpg</span></div><div class="photo-card" data-img="photo-04.jpg"><img alt="PHOTO 04" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-04.jpg"/><span class="photo-fallback">PHOTO 04<br/>photo-04.jpg</span></div><div class="photo-card" data-img="photo-05.jpg"><img alt="PHOTO 05" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-05.jpg"/><span class="photo-fallback">PHOTO 05<br/>photo-05.jpg</span></div><div class="photo-card" data-img="photo-06.jpg"><img alt="PHOTO 06" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-06.jpg"/><span class="photo-fallback">PHOTO 06<br/>photo-06.jpg</span></div><div class="photo-card" data-img="photo-07.jpg"><img alt="PHOTO 07" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-07.jpg"/><span class="photo-fallback">PHOTO 07<br/>photo-07.jpg</span></div><div class="photo-card" data-img="photo-08.jpg"><img alt="PHOTO 08" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-08.jpg"/><span class="photo-fallback">PHOTO 08<br/>photo-08.jpg</span></div><div class="photo-card" data-img="photo-09.jpg"><img alt="PHOTO 09" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-09.jpg"/><span class="photo-fallback">PHOTO 09<br/>photo-09.jpg</span></div><div class="photo-card" data-img="photo-10.jpg"><img alt="PHOTO 10" decoding="async" loading="lazy" onerror="this.parentElement.remove(); if(window.refreshGallery) window.refreshGallery();" onload="this.parentElement.classList.add('has-image')" src="photo-10.jpg"/><span class="photo-fallback">PHOTO 10<br/>photo-10.jpg</span></div>
+</div><div aria-label="写真操作" class="gallery-arrows"><button aria-label="前の写真" class="gallery-arrow" data-gallery-prev="" type="button">‹</button><button aria-label="次の写真" class="gallery-arrow" data-gallery-next="" type="button">›</button></div><div aria-label="写真切り替え" class="dots gallery-dots" style="margin-bottom:12px"></div>
+</div>
+<div class="about-text"><p>遥か彼方の銀河系ファンイベント</p><strong>UNLEASHED</strong><p>ーアンリーシュドー<br/>展示や物販、<br/>フィギュアやイラスト、コスプレなど<br/>「好き」があふれる交流の場です。</p><p style="margin-top:14px">時を超え、年代を超えて<br/>楽しみましょう！</p><div class="past-missions"><p class="past-missions-title">PAST MISSIONS</p><a href="https://x.com/search?q=%23%E3%82%A2%E3%83%B3%E3%83%AA%E3%83%BC%E3%82%B7%E3%83%A5%E3%83%89S&amp;src=typed_query&amp;f=top" rel="noopener" target="_blank">#アンリーシュドS</a><a href="https://x.com/search?q=%23%E3%82%A2%E3%83%B3%E3%83%AA%E3%83%BC%E3%82%B7%E3%83%A5%E3%83%89S2&amp;src=typed_query&amp;f=top" rel="noopener" target="_blank">#アンリーシュドS2</a><a href="https://x.com/search?q=%23%E3%82%A2%E3%83%B3%E3%83%AA%E3%83%BC%E3%82%B7%E3%83%A5%E3%83%89S3&amp;src=typed_query&amp;f=top" rel="noopener" target="_blank">#アンリーシュドS3</a></div><p class="way">This is the fan way.</p></div>
+</div>
+</div>
+</section>
+<section class="section bg-space-2" id="countdown-section">
+<div class="wrap"><h2 class="section-title">COUNTDOWN</h2><div class="countdown" id="countdown"><div class="count-item"><span class="num" id="days">0</span><span class="label">DAYS</span></div><div class="count-item"><span class="num" id="hours">0</span><span class="label">HOURS</span></div><div class="count-item"><span class="num" id="minutes">0</span><span class="label">MINUTES</span></div><div class="count-item"><span class="num" id="seconds">0</span><span class="label">SECONDS</span></div></div></div>
+</section>
+<section class="section bg-space-1" id="info">
+<div class="wrap"><h2 class="section-title">EVENT INFORMATION</h2><div class="info-grid">
+<div class="info-card"><div class="info-row"><div class="icon">▣</div><div><div class="info-label">開催日</div><p>2026年7月25日（土）</p></div></div><div class="info-row"><div class="icon">⌖</div><div><div class="info-label">会場</div><p><a href="https://www.sanbo.metro.tokyo.lg.jp/hamamatsucho/access/" rel="noopener" target="_blank">都立産業貿易センター浜松町館 5F展示室</a></p><p class="small">https://www.sanbo.metro.tokyo.lg.jp/hamamatsucho/access/</p></div></div><div class="info-row"><div class="icon">◷</div><div><div class="info-label">イベント開催時間</div><p>11:40〜17:30（アーリーイン入場は10:30から可）</p></div></div></div>
+<div><div class="online-ticket"><div class="online-ticket-head"><h3>オンラインチケット</h3><a class="livepocket-button" href="https://livepocket.jp/e/3m41v" rel="noopener" target="_blank">🎫 LivePocketで購入</a></div>
+<div class="ticket-sale-list"><div class="ticket-sale-row">
+    <p class="red sold">【完売しました】</p>
+    <p class="ticket-sale-row-title">🔸BLOKEES付前売り券</p><p class="benefit-note">¥4,000 （11:00入場）</p>
+  <p class="ticket-sale-row-title">🔸アーリーイン前売り券</p><p class="benefit-note">¥2,800 （10:30入場）</p>
+  <p class="ticket-sale-row-title">🔸通常前売り券</p><p class="benefit-note">¥2,800 （11:00入場）</p>
+  <p class="ticket-sale-row-title">🔸クロークチケット</p><p class="benefit-note">¥500</p>
+
+
+</div><div class="ticket-sale-row"><p class="ticket-sale-row-title">🔸当日券（先行販売）</p><p class="benefit-note">¥2,800 （11:40入場）（特典なし）</p>
+  <p>【販売期間】　7月18日（土）〜　<br/>100枚限定販売</p></div>
+<div class="ticket-sale-row"><p class="ticket-sale-row-title">🔸当日券</p><p class="benefit-note">￥2,800 （11:40入場）（特典なし）</p>
+  <p>【販売期間】　7月24日（金）20:00 〜 25日（土）11:40<br/>200枚限定販売</p></div></div><p class="ticket-sale-summary-note">※特別先行販売・当日券ともに予定枚数に達し次第、販売終了となります。</p></div><h3 class="onsite-ticket-title">会場販売</h3><div class="tickets"><article class="ticket"><h3>一般</h3><p class="price">¥2,800</p><p class="time">11:40〜</p><hr/><p class="ticket-type">当日券</p><p class="small red">現金のみ</p></article><article class="ticket"><h3>高校生</h3><p class="price">¥1,400</p><p class="time">11:40〜</p><hr/><p class="ticket-type">当日券</p><p class="small red">現金のみ</p></article><article class="ticket"><h3>ワンコイン</h3><p class="price">¥500</p><p class="time">16:00〜</p><hr/><p class="ticket-type">当日券</p><p class="small red">現金のみ</p></article><article class="ticket"><h3>中学生以下</h3><p class="price">無料</p><hr/><p class="ticket-type">当日券</p><p class="small">※保護者同伴必須<br/>※保護者1名につき<br/>お子様2名まで入場可能</p></article></div><div class="notice"><p class="nnotice-text">※混雑状況に応じて、安全確保のため当日券の販売を制限させていただく場合がございます。</p><p class="notice-text">※会場は他の商業施設と併設になっているため、販売開始前から館内フロアでお待ちいただくことは基本的にできかねます。あらかじめご了承ください。</p><!-- <b>▼▼ 当日販売情報はここを書き換えてください ▼▼</b><p class="red">※当日券は当日朝8:00から会場にて少量販売予定です</p><b>▲▲ ここまで ▲▲</b>--></div></div>
+</div></div>
+</section><section class="section bg-space-2" id="schedule"><div class="wrap">
+  <h2 class="section-title">MISSION SCHEDULE</h2>
+  <div class="schedule">
+    <div class="schedule-row"><div class="schedule-time">7:00</div><div>設営開始</div></div>
+    <div class="schedule-row"><div class="schedule-time">10:30</div><div><span class="schedule-important">アーリー入場券入場</span></div></div>
+    <div class="schedule-row"><div class="schedule-time">11:00</div><div><span class="schedule-important">前売券入場</span></div></div>
+    <div class="schedule-row"><div class="schedule-time">11:40</div><div><span class="schedule-important">当日券入場＆販売開始</span></div></div>
+    <div class="schedule-row"><div class="schedule-time">12:00</div><div>開会式</div></div>
+    <div class="schedule-row"><div class="schedule-time">16:00</div><div>閉会式＆<span class="schedule-important">500円入場開始</span></div></div>
+    <div class="schedule-row"><div class="schedule-time">17:00</div><div>クローク閉鎖</div></div>
+    <div class="schedule-row"><div class="schedule-time">17:30</div><div><span class="schedule-important">イベント終了</span></div></div>
+    <div class="schedule-row"><div class="schedule-time">18:40</div><div>出展者会場から退出</div></div>
+    <div class="schedule-row"><div class="schedule-time">19:00</div><div>点検、完全撤収</div></div>
+  </div>
+</div></section><section class="section bg-space-1 info-links" id="venue-guide">
+<div class="wrap">
+<div class="tiles">
+<section class="tile" id="circle"><h3>CIRCLE DIRECTORY</h3><div class="placeholder" data-img="circle-list.jpg"><img alt="CIRCLE LIST" decoding="async" loading="lazy" onerror="this.style.display='none'" onload="this.parentElement.classList.add('has-image')" src="circle-list.jpg"/><span class="placeholder-fallback">CIRCLE LIST IMAGE<br/>circle-list.jpg</span></div></section>
+<section class="tile" id="map"><h3>VENUE MAP</h3><div class="placeholder" data-img="venue-map.jpg"><img alt="VENUE MAP" decoding="async" loading="lazy" onerror="this.style.display='none'" onload="this.parentElement.classList.add('has-image')" src="venue-map.jpg"/><span class="placeholder-fallback">VENUE MAP IMAGE<br/>venue-map.jpg</span></div></section>
+</div>
+<!-- ムービーが完成したら、この下に MOVIE セクションを追加できます。YouTube埋め込みやサムネイルリンク対応予定。 -->
+</div>
+</section><section class="section bg-space-2" id="stage">
+<div class="wrap">
+<h2 class="section-title">STAGE EVENT</h2>
+<p class="guide-note">※時間は多少前後する場合がございます。ご了承ください。</p>
+<div class="stage-accordion">
+<details><summary><span class="stage-time">12:00〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">開会式</span></summary><div class="stage-detail-body"><p>イベント開始のご挨拶。</p></div></details>
+<details><summary><span class="stage-time">12:30〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">テンナイン ＂シネマイム＂①</span></summary><div class="stage-detail-body"><p>
+映画を身体だけで再現するパフォーマンス「シネマイム」<br/>登場人物、効果音、セット、カメラワークに至るまで身体だけで再現！
+記憶とリンクして名シーンが今、目の前に💡<br/>
+マンダロリアンやります‼️<br/>
+<button aria-label="テンナインの画像を拡大表示" class="stage-thumb" data-img="stage-2.jpg" type="button"><img alt="テンナイン " decoding="async" loading="lazy" src="stage-2.jpg"/></button>
+<a class="external-new-tab" href="https://www.tennine.net/" rel="noopener noreferrer" target="_blank">テンナインWEBサイト</a></p></div></details>
+
+<details><summary><span class="stage-time">12:55〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">集合写真撮影①</span></summary><div class="stage-detail-body"><p>ご来場の記念にみんなで集合写真を撮影します！
+参加者の皆様ならどなたでもご参加いただけますので、ぜひお気軽にご集合ください。一緒に思い出の一枚を残しましょう！</p></div></details>
+<details><summary><span class="stage-time">13:00〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">あなたのお宝見せてください</span></summary><div class="stage-detail-body">
+<p>とっておきのお宝が大集合！俳優のサインや自作フィギュア、コスチューム、長年集めたコレクション、思い出の愛読書など、出演者それぞれが大切にしている"お宝"を、そのエピソードとともにご紹介します。どんなお宝が飛び出すのか、ぜひお楽しみください。
+</p></div></details>
+<details><summary><span class="stage-time">13:30〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">落選セレブレーションJAPAN</span></summary><div class="stage-detail-body">
+<p>出展申請をしたものの、残念ながら実現に至らなかった企画を、この場で披露！画像や制作物、アイテムなどと一緒に、「もし出展できていたら、こんな内容だった」という想いを語っていただく企画です。悔しさも情熱もアンリーシュドがその想いを全力で受け止め、全力で肯定します！</p></div></details>
+<details><summary><span class="stage-time">13:50〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">SWCLA2027 耳寄り情報(JUNKHIRO)</span></summary><div class="stage-detail-body"><p>coming soon</p></div></details>
+<details><summary><span class="stage-time">14:00〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">デヴィッド・サンタナ氏トークショー</span></summary><div class="stage-detail-body">
+<p>ローグ・ワン公開10周年となる今年、ショアトルーパーやストームトルーパーなど複数の役を演じた俳優デヴィッド・サンタナ氏がアンリーシュドに帰還‼✨</p>
+<button aria-label="デヴィッド・サンタナ氏の画像を拡大表示" class="stage-thumb" data-img="stage-1.jpg" type="button"><img alt="デヴィッド・サンタナ氏" decoding="async" loading="lazy" src="stage-1.jpg"/></button>
+</div></details>
+<details><summary><span class="stage-time">14:40〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">コスプレショウケース</span></summary><div class="stage-detail-body">
+<p>さまざまなテーマのコスプレをステージでご紹介するショウケースです。人生初のコスプレや、この日が初お披露目となる衣装はもちろん、ジャンルを問わない自由なコスプレ、バウンドコーデや概念コーデ、そして圧倒的な完成度を誇るレジェンダリーコスプレまで、多彩な参加者がステージを彩ります。ここでしか見られないこだわりの衣装や、それぞれの想いが詰まったパフォーマンスをぜひお楽しみください。</p></div></details>
+<details><summary><span class="stage-time">15:40〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">プレゼント抽選会</span></summary><div class="stage-detail-body">
+<p>前売り券をご購入いただいた皆様を対象に、豪華プレゼントが当たる抽選会を開催します！抽選番号は、ご入場時にお渡しするリストバンドの番号となります。当日はリストバンドを外さずにお持ちください。ファン必見の賞品をご用意しております。
+            <br/>プレゼントの詳細は、<a href="https://x.com/unleashed_s/status/2065404930664644876" rel="noopener noreferrer" target="_blank">公式X</a>をご確認ください。</p></div></details>
+<details><summary><span class="stage-time">16:00〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">閉幕式</span></summary><div class="stage-detail-body"><p>イベント終了のご挨拶</p></div></details>
+<details><summary><span class="stage-time">16:10〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">集合写真撮影②</span></summary><div class="stage-detail-body"><p>ご来場の記念にみんなで集合写真を撮影します！
+参加者の皆様ならどなたでもご参加いただけますので、ぜひお気軽にご集合ください。一緒に思い出の一枚を残しましょう！</p></div></details>
+<span class="stage-title">ボーナスコンテンツ</span>
+<details><summary><span class="stage-time">16:15〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">はじめまして、アンリーシュド<br/><s> 完全基礎講座 </s></span></summary><div class="stage-detail-body"><p>coming soon</p></div></details>
+<details><summary><span class="stage-time">17:05〜</span><span aria-hidden="true" class="stage-divider"></span><span class="stage-title">テンナイン ＂シネマイム＂②</span></summary><div class="stage-detail-body"><p>
+映画を身体だけで再現するパフォーマンス「シネマイム」<br/>登場人物、効果音、セット、カメラワークに至るまで身体だけで再現！
+記憶とリンクして名シーンが今、目の前に💡<br/>
+マンダロリアンやります‼️<br/>
+<button aria-label="テンナインの画像を拡大表示" class="stage-thumb" data-img="stage-2.jpg" type="button"><img alt="テンナイン " decoding="async" loading="lazy" src="stage-2.jpg"/></button>
+<a class="external-new-tab" href="https://www.tennine.net/" rel="noopener noreferrer" target="_blank">テンナインWEBサイト</a></p></div></details>
+</div>
+</div>
+</section><section class="section bg-space-1" id="guide">
+<div class="wrap">
+<h2 class="section-title">会場ルール</h2>
+<div class="guide-accordion">
+<details>
+<summary>飲食について</summary>
+<div class="guide-body"><ul>
+<li>飲食は指定の飲食エリアおよび5階ホワイエのみ可能です。<br/>（出店者はブース内飲食も可能です。）</li>
+<li>nope cafeが参加者様向けに軽食・ドリンクを販売いたします。</li>
+<li>nope cafeでご購入いただいた飲食物は、会場内の指定飲食エリアにてお召し上がりください。<br/>（5階ホワイエへでの飲食はご遠慮ください）</li>
+<li>会場内を歩きながらの飲食はご遠慮ください。</li>
+<li>飲み物は蓋付きのもののみ持ち込み可能です。</li>
+<li>会場内での飲酒は禁止です。</li>
+<li>展示物・販売物への飲食物による汚損につきましては、主催では責任を負いかねますので十分ご注意ください。</li>
+<li>会場内にゴミ箱の設置はございません。ゴミは各自お持ち帰りください。<br/>（nope cafeでご購入いただいた飲食物は、専用のゴミ箱をご利用いただけます）</li>
+<li>5階ホワイエに自動販売機がございます。</li>
+</ul></div>
+</details>
+<details>
+<summary>感染症対策について</summary>
+<div class="guide-body"><ul><li>マスクの着用・手指消毒は任意です。</li></ul></div>
+</details>
+<details>
+<summary>撮影について</summary>
+<div class="guide-body"><ul>
+<li>コスプレイヤーの方を撮影する際や、SNSへ投稿する際は、トラブル防止のため必ずご本人への確認をお願いいたします。</li>
+<li>会場内は全面撮影可能ですが、参加者様の写り込み等へのご配慮をお願いいたします。</li>
+<li>ライブコマース及びそれに準ずる撮影行為は禁止いたします。</li>
+</ul></div>
+</details>
+<details>
+<summary>会場について</summary>
+<div class="guide-body"><ul>
+<li>会場内の温度は、コスプレに合わせた涼しめの設定としております。寒さがご不安な方は、温度調整のできる服装でご来場ください。</li>
+<li>体調不良の場合は、遠慮なくスタッフまでお声がけください。</li>
+<li>こまめな水分補給をお願いいたします。</li>
+</ul></div>
+</details>
+<details>
+<summary>禁止事項</summary>
+<div class="guide-body"><ul>
+<li>出展者・出品者以外によるフラッグ、ボード等の大型物および展開物の持ち込み</li>
+<li>出展者・出品者以外による勧誘行為<br/>※フライヤー等の配布物を置くスペースは設置いたしますので、ご自由にお使いください。<br/>（閉会後は必ずお持ち帰りください）</li>
+<li>通路を塞ぐ大きさの物の持ち込み</li>
+<li>過度な勧誘行為やナンパ行為</li>
+</ul></div>
+</details>
+</div>
+</div>
+</section><section class="section bg-space-2" id="cosplay">
+<div class="wrap">
+<h2 class="section-title">コスプレ参加者の皆さまへ</h2><p class="guide-note">※<a href="#guide">会場ルール</a>のご注意も併せてご確認ください。</p>
+<div class="guide-accordion">
+<details>
+<summary>コスプレ・衣装・小道具について</summary>
+<div class="guide-body"><ul>
+<li>フルフェイスマスク・被り物は着用可能です。<br/>※展示物や参加者様への接触防止のため、移動中はなるべくお脱ぎください。</li>
+<li>武器・小道具は、引きずらずに持ち運びできるものに限ります。<br/>※安全管理のため、先端が尖ったものは撮影時以外キャップやカバーの着用をお願いいたします。<br/>（対応できない場合は持ち込み不可）</li>
+<li>ブラックフェイスは禁止です。<br/>（異色肌メイクは可）</li>
+</ul></div>
+</details>
+<details>
+<summary>更衣・移動について</summary>
+<div class="guide-body"><ul>
+<li>コスプレ姿での来場は禁止です。</li>
+<li>コスプレ姿での場外への外出は禁止です。また、階移動もできません。<br/>※ただし、同フロアのお手洗いへの移動のみ可能です。</li>
+<li>更衣室には鏡がございません。必要な方は各自ご持参ください。</li>
+<li>椅子やテーブルは多少ご用意しておりますので、譲り合ってご利用くださいますようお願いいたします。</li>
+<li>防犯対策の観点から、更衣室に設置されているコインロッカーおよびラックの使用は禁止とさせていただきます。</li>
+</ul></div>
+</details>
+<details>
+<summary>クローク・お荷物について</summary>
+<div class="guide-body"><ul>
+<li>クロークチケットは完売しております。追加販売はございません。</li>
+<li>5階ホワイエにコインロッカーがございますが、数・サイズともに限りがあるため、イベントとしてはご利用を推奨しておりません。</li>
+<li>会場内へのお荷物のお持ち込みは可能ですが、混雑防止のため、なるべくお荷物をコンパクトにまとめてご来場くださいますようご協力をお願いいたします。</li>
+</ul></div>
+</details>
+</div>
+
+</div>
+</section><section class="section bg-space-1"><div class="wrap"><div class="tiles"><section class="tile" id="contact"><h3>CONTACT</h3><div class="contact-card"><p>公式X</p><p><a href="https://x.com/unleashed_s" rel="noopener" target="_blank">@unleashed_s</a></p></div><div class="contact-card"><p>主催</p><p><a href="https://x.com/akiraskywalker3" rel="noopener" target="_blank">AKIRA</a></p><p><a href="https://x.com/gothamTaxii" rel="noopener" target="_blank">Taxii</a></p><p><a href="https://x.com/hiroyuki5241969
+" rel="noopener" target="_blank">JUNKHIRO</a></p></div></section></div></div></section>
+
+
+
+
+
+
+</main>
+<footer class="footer">MAY THE FANDOM BE WITH YOU<br/>UNLEASHED EPISODE 4</footer>
+<div aria-hidden="true" class="modal" id="modal"><button aria-label="閉じる" class="modal-close">×</button><div class="modal-inner"><img alt="拡大画像" id="modalImg" src=""/><p class="modal-note" id="modalNote"></p></div></div>
+<script>
+// ==============================
+// COUNTDOWN
+// 開催前：カウントダウン / 当日：TODAY'S MISSION / 終了後：MISSION COMPLETE
+// ==============================
+const target = new Date('2026-07-25T11:40:00+09:00');
+const eventDayStart = new Date('2026-07-25T00:00:00+09:00');
+const eventEnd = new Date('2026-07-25T17:30:00+09:00');
+const pad = n => String(Math.max(0,n));
+function updateCountdown(){
+  const countdown = document.getElementById('countdown');
+  const now = new Date();
+  if(now >= eventEnd){
+    countdown.className = 'countdown-message complete';
+    countdown.innerHTML = '<span class="mission">MISSION COMPLETE</span><span class="jp">ご来場ありがとうございました。</span>';
+    return;
+  }
+  if(now >= eventDayStart){
+    countdown.className = 'countdown-message';
+    countdown.innerHTML = '<span class="mission">TODAY\'S MISSION</span><span class="jp">本日開催！</span>';
+    return;
+  }
+  const diff = target - now;
+  const safe = Math.max(0,diff);
+  const days = Math.floor(safe/(1000*60*60*24));
+  const hours = Math.floor((safe/(1000*60*60))%24);
+  const minutes = Math.floor((safe/(1000*60))%60);
+  const seconds = Math.floor((safe/1000)%60);
+  document.getElementById('days').textContent = pad(days);
+  document.getElementById('hours').textContent = pad(hours);
+  document.getElementById('minutes').textContent = pad(minutes);
+  document.getElementById('seconds').textContent = pad(seconds);
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+const heroTrack = document.querySelector('.hero-bg-track');
+const heroDots = document.querySelectorAll('[data-hero-dot]');
+const heroPrev = document.querySelector('[data-hero-prev]');
+const heroNext = document.querySelector('[data-hero-next]');
+let heroIndex = 0;
+function setHeroSlide(index){
+  heroIndex = (index + heroDots.length) % heroDots.length;
+  heroDots.forEach((dot,i)=>dot.classList.toggle('is-active',i===heroIndex));
+  if(heroTrack) heroTrack.style.transform = `translateX(-${heroIndex * 100}%)`;
+}
+heroDots.forEach(dot=>dot.addEventListener('click',()=>setHeroSlide(Number(dot.dataset.heroDot))));
+if(heroPrev) heroPrev.addEventListener('click',()=>setHeroSlide(heroIndex - 1));
+if(heroNext) heroNext.addEventListener('click',()=>setHeroSlide(heroIndex + 1));
+setHeroSlide(0);
+let heroTimer = setInterval(()=>setHeroSlide(heroIndex + 1), 6000);
+document.querySelector('.hero')?.addEventListener('mouseenter',()=>clearInterval(heroTimer));
+document.querySelector('.hero')?.addEventListener('mouseleave',()=>{heroTimer = setInterval(()=>setHeroSlide(heroIndex + 1), 6000);});
+
+const galleryTrack = document.querySelector('.gallery-track');
+const galleryDotsWrap = document.querySelector('.gallery-dots');
+const galleryPrev = document.querySelector('[data-gallery-prev]');
+const galleryNext = document.querySelector('[data-gallery-next]');
+let galleryIndex = 0;
+let galleryActiveDot = 0;
+
+function galleryItems(){
+  return galleryTrack ? [...galleryTrack.querySelectorAll('.photo-card')] : [];
+}
+function galleryVisibleCount(){
+  if(window.matchMedia('(max-width: 640px)').matches) return 1;
+  if(window.matchMedia('(max-width: 960px)').matches) return 2;
+  return 3;
+}
+function galleryMaxIndex(){
+  return Math.max(0, galleryItems().length - galleryVisibleCount());
+}
+function buildGalleryDots(){
+  if(!galleryDotsWrap || !galleryTrack) return;
+  const total = galleryItems().length;
+  galleryDotsWrap.innerHTML = '';
+  for(let i=0;i<total;i++){
+    const btn = document.createElement('button');
+    btn.className = 'dot' + (i === galleryActiveDot ? ' is-active' : '');
+    btn.type = 'button';
+    btn.setAttribute('aria-label', '写真 ' + (i + 1));
+    btn.dataset.galleryDot = String(i);
+    btn.addEventListener('click',()=>setGalleryDot(i));
+    galleryDotsWrap.appendChild(btn);
+  }
+}
+function setGalleryDot(index){
+  if(!galleryTrack) return;
+  const total = galleryItems().length;
+  const max = galleryMaxIndex();
+  galleryActiveDot = Math.max(0, Math.min(index, Math.max(0,total - 1)));
+  galleryIndex = Math.min(galleryActiveDot, max);
+  const card = galleryTrack.querySelector('.photo-card');
+  const gap = parseFloat(getComputedStyle(galleryTrack).gap) || 0;
+  const shift = card ? galleryIndex * (card.getBoundingClientRect().width + gap) : 0;
+  galleryTrack.style.transform = `translateX(-${shift}px)`;
+  if(galleryDotsWrap){
+    galleryDotsWrap.querySelectorAll('.dot').forEach((dot,i)=>dot.classList.toggle('is-active',i===galleryActiveDot));
+  }
+}
+function refreshGallery(){
+  const total = galleryItems().length;
+  galleryActiveDot = Math.min(galleryActiveDot, Math.max(0,total - 1));
+  buildGalleryDots();
+  setGalleryDot(galleryActiveDot);
+}
+window.refreshGallery = refreshGallery;
+if(galleryPrev) galleryPrev.addEventListener('click',()=>setGalleryDot(galleryActiveDot - 1));
+if(galleryNext) galleryNext.addEventListener('click',()=>setGalleryDot(galleryActiveDot + 1));
+window.addEventListener('resize',refreshGallery);
+refreshGallery();
+
+let galleryTouchStartX = null;
+const galleryEl = document.querySelector('.gallery');
+if(galleryEl){
+  galleryEl.addEventListener('touchstart', e => { galleryTouchStartX = e.touches[0].clientX; }, {passive:true});
+  galleryEl.addEventListener('touchend', e => {
+    if(galleryTouchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - galleryTouchStartX;
+    if(Math.abs(dx) > 42){ setGalleryDot(galleryActiveDot + (dx < 0 ? 1 : -1)); }
+    galleryTouchStartX = null;
+  }, {passive:true});
+}
+
+const menuToggle = document.querySelector('.menu-toggle');
+const globalNav = document.getElementById('globalNav');
+function closeMenu(){
+  if(!menuToggle || !globalNav) return;
+  globalNav.classList.remove('is-open');
+  document.body.classList.remove('nav-open');
+  menuToggle.classList.remove('is-open');
+  menuToggle.setAttribute('aria-expanded','false');
+  menuToggle.setAttribute('aria-label','メニューを開く');
+}
+function openMenu(){
+  if(!menuToggle || !globalNav) return;
+  globalNav.classList.add('is-open');
+  document.body.classList.add('nav-open');
+  menuToggle.classList.add('is-open');
+  menuToggle.setAttribute('aria-expanded','true');
+  menuToggle.setAttribute('aria-label','メニューを閉じる');
+}
+if(menuToggle && globalNav){
+  menuToggle.onclick = (e)=>{
+    e.preventDefault();
+    e.stopPropagation();
+    globalNav.classList.contains('is-open') ? closeMenu() : openMenu();
+  };
+  globalNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+
+// 外部サイトをスマートフォンでも確実に新しいタブで開く
+// （通常は target="_blank" が働き、対応が不安定な環境のみ window.open で補助）
+document.querySelectorAll('a.external-new-tab').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    const opened = window.open(link.href, '_blank');
+    if(opened){
+      try { opened.opener = null; } catch(_) {}
+    } else {
+      // ポップアップが制限された場合は現在のタブで開く
+      window.location.href = link.href;
+    }
+  });
+});
+  document.addEventListener('keydown',e=>{if(e.key === 'Escape') closeMenu();});
+}
+
+let touchStartX = null;
+const heroEl = document.querySelector('.hero');
+if(heroEl){
+  heroEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+  heroEl.addEventListener('touchend', e => {
+    if(touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if(Math.abs(dx) > 48){ setHeroSlide(heroIndex + (dx < 0 ? 1 : -1)); }
+    touchStartX = null;
+  }, {passive:true});
+}
+
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+const modalNote = document.getElementById('modalNote');
+document.querySelectorAll('[data-img]').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const src = el.dataset.img;
+    modalImg.src = src;
+    modalImg.alt = src;
+  
+    modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');
+  });
+});
+document.querySelector('.modal-close').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+function closeModal(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');modalImg.removeAttribute('src')}
+</script>
+</body>
+</html>
